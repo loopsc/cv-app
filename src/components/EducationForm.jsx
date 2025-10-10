@@ -1,0 +1,40 @@
+export default function EducationForm({ data, onChange }) {
+    return (
+        <div className="form-group general-info">
+            <h1>Education & Qualifications</h1>
+            <input
+                type="text"
+                placeholder="Insitution"
+                value={data.institution}
+                onChange={(e) => onChange(e.target.value)}
+            />
+            <input
+                type="text"
+                placeholder="Qualification"
+                value={data.qualification}
+                onChange={(e) => onChange(e.target.value)}
+            />
+            <div className="dates-container">
+                <div className="label-input">
+                    <label htmlFor="edu-start-date">Start Date:</label>
+                    <input
+                        id="edu-start-date"
+                        type="date"
+                        value={data.studyStart}
+                        onChange={(e) => onChange(e.target.value)}
+                    />
+                </div>
+
+                <div className="label-input">
+                    <label htmlFor="edu-end-date">End Date:</label>
+                    <input
+                        id="edu-end-date"
+                        type="date"
+                        value={data.studyEnd}
+                        onChange={(e) => onChange(e.target.value)}
+                    />
+                </div>
+            </div>
+        </div>
+    );
+}
