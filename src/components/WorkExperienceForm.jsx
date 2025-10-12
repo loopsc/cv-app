@@ -5,40 +5,40 @@ export default function WorkExperienceForm({ data, onChange }) {
             <input
                 type="text"
                 placeholder="Company Name"
-                value={data.institution}
-                onChange={(e) => onChange(e.target.value)}
+                value={data.company}
+                onChange={(e) => onChange({company: e.target.value})}
             />
             <input
                 type="text"
                 placeholder="Position"
-                value={data.qualification}
-                onChange={(e) => onChange(e.target.value)}
+                value={data.position}
+                onChange={(e) => onChange({position: e.target.value})}
             />
             <input
-                type="date"
-                placeholder="Responsibilities"
-                value={data.studyStart}
-                onChange={(e) => onChange(e.target.value)}
+                type="text"
+                placeholder="Responsibilities (Use ',' to separate)"
+                value={data.responsibilities}
+                onChange={(e) => onChange({responsibilities: e.target.value})}
             />
             <div className="dates-container">
                 {/* Start */}
                 <div className="label-input">
-                    <label htmlFor="edu-start-date">Start Date:</label>
+                    <label htmlFor="work-start-date">Start Date:</label>
                     <input
                         id="work-start-date"
                         type="date"
                         value={data.workStart}
-                        onChange={(e) => onChange(e.target.value)}
+                        onChange={(e) => onChange({workStart: e.target.value})}
                     />
                 </div>
                 {/* End */}
                 <div className="label-input">
-                    <label htmlFor="edu-end-date">End Date:</label>
+                    <label htmlFor="work-end-date">End Date:</label>
                     <input
                         id="work-end-date"
                         type="date"
                         value={data.workEnd}
-                        onChange={(e) => onChange(e.target.value)}
+                        onChange={(e) => onChange({workEnd: e.target.value})}
                     />
                 </div>
             </div>

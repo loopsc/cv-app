@@ -14,6 +14,13 @@ function App() {
             eduStart: "",
             eduEnd: "",
         },
+        experience: {
+            company: "",
+            position: "",
+            responsibilities: "",
+            workStart: "",
+            workEnd: "",
+        }
     });
 
     return (
@@ -35,6 +42,15 @@ function App() {
                         setCvData((prevCvData) => ({
                             ...prevCvData,
                             education: {...prevCvData.education, ...newEducation}
+                        }))
+                    }
+                />
+                <WorkExperienceForm 
+                    data={cvData.experience}
+                    onChange={(newExperience) => 
+                        setCvData((prevCvData) => ({
+                            ...prevCvData,
+                            experience: {...prevCvData.experience, ...newExperience}
                         }))
                     }
                 />

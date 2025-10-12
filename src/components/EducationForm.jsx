@@ -6,13 +6,13 @@ export default function EducationForm({ data, onChange }) {
                 type="text"
                 placeholder="Insitution"
                 value={data.institution}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={(e) => onChange({institution: e.target.value})}
             />
             <input
                 type="text"
                 placeholder="Qualification"
                 value={data.qualification}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={(e) => onChange({qualification: e.target.value})}
             />
             <div className="dates-container">
                 <div className="label-input">
@@ -20,8 +20,8 @@ export default function EducationForm({ data, onChange }) {
                     <input
                         id="edu-start-date"
                         type="date"
-                        value={data.studyStart}
-                        onChange={(e) => onChange(e.target.value)}
+                        value={data.eduStart}
+                        onChange={(e) => onChange({eduStart: e.target.value})}
                     />
                 </div>
 
@@ -30,8 +30,8 @@ export default function EducationForm({ data, onChange }) {
                     <input
                         id="edu-end-date"
                         type="date"
-                        value={data.studyEnd}
-                        onChange={(e) => onChange(e.target.value)}
+                        value={data.eduEnd}
+                        onChange={(e) => onChange({eduEnd: e.target.value})}
                     />
                 </div>
             </div>
