@@ -1,4 +1,4 @@
-export default function EducationForm({ data, onChange }) {
+export default function EducationForm({ data, onChange, onAdd }) {
     return (
         <div className="form-group general-info">
             <h1>Education & Qualifications</h1>
@@ -35,6 +35,7 @@ export default function EducationForm({ data, onChange }) {
                     />
                 </div>
             </div>
+            <button type="button" onClick={onAdd}>Add</button>
         </div>
     );
 }

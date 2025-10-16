@@ -10,18 +10,28 @@ export default function CVPreview({ data }) {
             </div>
             <div className="output education">
                 <h1>Education & Qualifications</h1>
-                <p>{"Institution: " + data.education.institution}</p>
-                <p>{"Qualification: " + data.education.qualification}</p>
-                <p>{"Start: " + data.education.eduStart}</p>
-                <p>{"End: " + data.education.eduEnd}</p>
+                {data.education.map((edu, index) => (
+                    <div key={index} className="education-entry">
+                        <p>Institution: {edu.institution}</p>
+                        <p>Qualification: {edu.qualification}</p>
+                        <p>Start: {edu.eduStart}</p>
+                        <p>End: {edu.eduEnd}</p>
+                        <hr />
+                    </div>
+                ))}
             </div>
             <div className="output job-experience">
                 <h1>Job Experience</h1>
-                <p>{"Compnay: " + data.experience.company}</p>
-                <p>{"Position: " + data.experience.position}</p>
-                <p>{"Responibilities: " + data.experience.responsibilities}</p>
-                <p>{"Start: " + data.experience.workStart}</p>
-                <p>{"End: " + data.experience.workEnd}</p>
+                {data.experience.map((job, index) => (
+                    <div key={index} className="job-entry">
+                        <p>Company: {job.company}</p>
+                        <p>Position: {job.position}</p>
+                        <p>Responsibilities: {job.responsibilities}</p>
+                        <p>Start: {job.workStart}</p>
+                        <p>End: {job.workEnd}</p>
+                        <hr />
+                    </div>
+                ))}
             </div>
         </div>
     );

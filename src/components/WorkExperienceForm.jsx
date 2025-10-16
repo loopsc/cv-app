@@ -1,4 +1,4 @@
-export default function WorkExperienceForm({ data, onChange }) {
+export default function WorkExperienceForm({ data, onChange, onAdd }) {
     return (
         <div className="form-group general-info">
             <h1>Work Experience</h1>
@@ -6,19 +6,19 @@ export default function WorkExperienceForm({ data, onChange }) {
                 type="text"
                 placeholder="Company Name"
                 value={data.company}
-                onChange={(e) => onChange({company: e.target.value})}
+                onChange={(e) => onChange({ company: e.target.value })}
             />
             <input
                 type="text"
                 placeholder="Position"
                 value={data.position}
-                onChange={(e) => onChange({position: e.target.value})}
+                onChange={(e) => onChange({ position: e.target.value })}
             />
             <input
                 type="text"
                 placeholder="Responsibilities (Use ',' to separate)"
                 value={data.responsibilities}
-                onChange={(e) => onChange({responsibilities: e.target.value})}
+                onChange={(e) => onChange({ responsibilities: e.target.value })}
             />
             <div className="dates-container">
                 {/* Start */}
@@ -28,7 +28,9 @@ export default function WorkExperienceForm({ data, onChange }) {
                         id="work-start-date"
                         type="date"
                         value={data.workStart}
-                        onChange={(e) => onChange({workStart: e.target.value})}
+                        onChange={(e) =>
+                            onChange({ workStart: e.target.value })
+                        }
                     />
                 </div>
                 {/* End */}
@@ -38,10 +40,13 @@ export default function WorkExperienceForm({ data, onChange }) {
                         id="work-end-date"
                         type="date"
                         value={data.workEnd}
-                        onChange={(e) => onChange({workEnd: e.target.value})}
+                        onChange={(e) => onChange({ workEnd: e.target.value })}
                     />
                 </div>
             </div>
+            <button type="button" onClick={onAdd}>
+                Add
+            </button>
         </div>
     );
 }
